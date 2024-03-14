@@ -14,3 +14,15 @@ variable "tenant_id" {
     description = "The tenant ID to be used to connect to Azure"
     type = string
 }
+variable "reg_url" {
+    description = "The ACR url"
+    type = string
+}
+variable "reg_user" {
+    description = "The ACR user"
+    type = string
+}
+variable "reg_pwd" {
+    description = "The ACR password"
+    type = string
+}
