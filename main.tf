@@ -22,7 +22,7 @@ resource "azurerm_linux_web_app" "linux_webapp" {
     service_plan_id = azurerm_service_plan.asp.id
     #public_network_access_enabled = true
 
-    site_config{
+    site_config {
         application_stack {
             #docker_image_name   = "nginx:latest"
             docker_registry_url = var.reg_url
