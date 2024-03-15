@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   name     = "Terraform-RG"
-  location = "us-south-central"
+  location = "southcentralus"
 
   tags = {
     Environment = "Dev"
