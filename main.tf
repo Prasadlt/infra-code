@@ -24,7 +24,7 @@ resource "azurerm_linux_web_app" "linux_webapp" {
 
     site_config {
         application_stack {
-            #docker_image_name   = "nginx:latest"
+            docker_image_name   = "nginx:latest"
             docker_registry_url = var.reg_url
             docker_registry_username = var.reg_user
             docker_registry_password = var.reg_pwd
