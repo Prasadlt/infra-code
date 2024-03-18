@@ -10,10 +10,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    commandOptions: '-var subscription_id="d2dde160-287b-4d75-a145-840669089858" -var client_id="ee9f6514-6920-4956-a0cc-17ab6123d410" -var client_secret="Pjd8Q~2cRbfB1JVgwnkY1ktpVRD-XLWdXPqS~ckH" -var tenant_id="eb042e5d-1256-4b9a-929b-f6bf7588fa34" -var reg_url="https://dotnetreg3.azurecr.io" -var reg_user="dotnetreg3" -var reg_pwd="bG1OFb3duY+FPFBG4g9LOBL6OCJz3uKZ/MvIWuZNDO+ACRCEI9E6"'
+    environmentServiceNameAzureRM: 'test-connection'
